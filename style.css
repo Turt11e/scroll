@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Quicksand:wght@300&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--spacing: 1.3;
+	--side-small: 26;
+	--side-big: 36;
+	--depth: 5500px;
+	--transition: .6s cubic-bezier(.01, .5, 0, 1);
+}
+body{
+	background-color: #000;
+	color: #fff;
+	font-size: calc(var(--index) * .9);
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 300;
+	line-height: 1.8;
+	height: var(--depth);
+}
+h1, h2, h3, h4{
+	line-height: 1;
+	font-weight: 100;
+	text-transform: uppercase;
+	width: min-content;
+}
+.container{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	perspective: 2000px;
+}
+.gallery{
+	transform-style: preserve-3d;
+	height: 100%;
+}
+.frame{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition:var(--transition), opacity .6s ease;
+	will-change: transform;
+	transform-style: preserve-3d;
+}
+.frame h2 {
+	font-family: 'Hurricane';
+	text-align: center;
+	font-size: calc(var(--index) * 3);
+}
+.frame h4 {
+	text-align: right;
+	font-size: calc(var(--index));
+}
+.frame_media {
+	position: relative;
+	height: calc(var(--index) * var(--side-big));
+	width: calc(var(--index) * var(--side-small));
+	background-position: center;
+	background-size: cover;
+}
+.frame_right{
+	left: calc((var(--side-small) / 2 + var(--spacing)) * var(--index));
+}
+.frame_left{
+	right: calc((var(--side-small) / 2 + var(--spacing)) * var(--index));
+}
+.frame_bg{
+	background-color: rgb(0 0 0 / .8);
+}
+.video {
+	position: relative;
+	height: calc(var(--index) * var(--side-small));
+	width: calc(var(--index) * var(--side-big));
+}
+.text_right {
+	position: relative;
+	left: 18vw;
+	line-height: 1;
+
+}
+.text_right h3{
+	font-size: calc(var(--index) * 2);
+	font-family: 'Hurricane';
+}
+.text_right p {
+	max-width: 30vw;
+	margin-top: 3vh;
+}
